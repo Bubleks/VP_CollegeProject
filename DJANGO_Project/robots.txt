@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /item/admin
+Disallow: /admin
+
+Sitemap: http://example.com/sitemap
