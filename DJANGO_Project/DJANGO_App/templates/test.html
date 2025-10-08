@@ -6,6 +6,8 @@
     <title>Document</title>
 </head>
 <body>
-    {{my_titles[0]}}
+    {% for title in titles %}
+    <p>{{title.title_name}}</p>
+    {% endfor %}
 </body>
 </html>

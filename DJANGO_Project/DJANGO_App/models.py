@@ -5,6 +5,12 @@ from django.db import models
 class Title(models.Model):
     title_name = models.CharField("Название", max_length=50)
 
+    def __str__(self):
+        return f"{self.title_name}"
+    class Meta:
+        verbose_name = 'Название Тайтла'
+        verbose_name_plural = 'Названия Тайтлов'
+
 class Genre(models.Model):
     genre_name = models.CharField("Жанр", max_length=25)
 

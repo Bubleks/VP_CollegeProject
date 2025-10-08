@@ -6,10 +6,10 @@ def print_hello(request):
     return HttpResponse(request.method)
 
 def test_templates(request):
-    titles = Title.object.all()
+    titles = Title.objects.all()
     return render(request, 'test.html',
                   {
-                      'my_titles': titles
+                      'titles': titles
                   })
 
 #def print_hello(request):
