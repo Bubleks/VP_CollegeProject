@@ -78,9 +78,7 @@ class Catalogue(models.Model):
 #
 #
 #Задание 1
-
-
-
+#
 #class Item(models.Model):
     item_name = models.CharField("Наименование Товара", max_length=50)
     price = models.FloatField("Цена")
