@@ -81,7 +81,7 @@ class Catalogue(models.Model):
 
 
 
-class Item(models.Model):
+#class Item(models.Model):
     item_name = models.CharField("Наименование Товара", max_length=50)
     price = models.FloatField("Цена")
     
@@ -90,51 +90,51 @@ class Item(models.Model):
     class Meta:
         verbose_name = 'Товар'
         verbose_name_plural = 'Товаров'
-
-class Supplier(models.Model):
-    supplier_name = models.CharField("Наименование Поставщика", max_length=50)
-    INN = models.IntegerField("ИНН")
-    
-    def __str__(self):
-        return f"{self.supplier_name}"
-    class Meta:
-        verbose_name = 'Поставщик'
-        verbose_name_plural = 'Поставщиков'
-
-class Shipping(models.Model):
-    item = models.ForeignKey(
-        Item,
-        verbose_name='Товар',
-        on_delete=models.CASCADE
-        )
-    adress = models.CharField("Адрес")
-    quanity = models.PositiveIntegerField("Количество")
-    shipping_datetime = models.DateTimeField("Время/Дата заказа")
-
-    def __str__(self):
-        return f"{self.item}"
-    class Meta:
-        verbose_name = 'Отгрузка'
-        verbose_name_plural = 'Отгрузок'
-
-class Order(models.Model):
-    item = models.ForeignKey(
-        Item,
-        verbose_name='Товар',
-        on_delete=models.CASCADE
-        )
-    supplier = models.ForeignKey(
-        Supplier,
-        verbose_name='Поставщик',
-        on_delete=models.CASCADE
-        )
-    quanity = models.PositiveIntegerField("Количество")
-    order_datetime = models.DateTimeField("Время/Дата заказа")
-    
-    def __str__(self):
-        return f"{self.supplier}: {self.item}|{self.quanity}"
-    class Meta:
-        verbose_name = 'Заказ'
-        verbose_name_plural = 'Заказов'
+#
+#class Supplier(models.Model):
+#    supplier_name = models.CharField("Наименование Поставщика", max_length=50)
+#    INN = models.IntegerField("ИНН")
+#    
+#    def __str__(self):
+#        return f"{self.supplier_name}"
+#    class Meta:
+#        verbose_name = 'Поставщик'
+#        verbose_name_plural = 'Поставщиков'
+#
+#class Shipping(models.Model):
+#    item = models.ForeignKey(
+#        Item,
+#        verbose_name='Товар',
+#        on_delete=models.CASCADE
+#        )
+#    adress = models.CharField("Адрес")
+#    quanity = models.PositiveIntegerField("Количество")
+#    shipping_datetime = models.DateTimeField("Время/Дата заказа")
+#
+#    def __str__(self):
+#        return f"{self.item}"
+#    class Meta:
+#        verbose_name = 'Отгрузка'
+#        verbose_name_plural = 'Отгрузок'
+#
+#class Order(models.Model):
+#    item = models.ForeignKey(
+#        Item,
+#        verbose_name='Товар',
+#        on_delete=models.CASCADE
+#        )
+#    supplier = models.ForeignKey(
+#        Supplier,
+#        verbose_name='Поставщик',
+#        on_delete=models.CASCADE
+#        )
+#    quanity = models.PositiveIntegerField("Количество")
+#    order_datetime = models.DateTimeField("Время/Дата заказа")
+#    
+#    def __str__(self):
+#        return f"{self.supplier}: {self.item}|{self.quanity}"
+#    class Meta:
+#        verbose_name = 'Заказ'
+#        verbose_name_plural = 'Заказов'
 
 
