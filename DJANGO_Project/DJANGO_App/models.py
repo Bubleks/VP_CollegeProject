@@ -14,11 +14,29 @@ class Title(models.Model):
 class Genre(models.Model):
     genre_name = models.CharField("Жанр", max_length=25)
 
+    def __str__(self):
+        return f"{self.genre_name}"
+    class Meta:
+        verbose_name = 'Наименование Жанра'
+        verbose_name_plural = 'Наименования Жанров'
+
 class Category(models.Model):
     category = models.CharField("Категория", max_length=25)
 
+    def __str__(self):
+        return f"{self.category}"
+    class Meta:
+        verbose_name = 'Наименовании Категории'
+        verbose_name_plural = 'Наименования Категорий'
+
 class Platform(models.Model):
     platform = models.CharField("Платформа", max_length=15)
+
+    def __str__(self):
+        return f"{self.platform}"
+    class Meta:
+        verbose_name = 'Название Платформы'
+        verbose_name_plural = 'Названия Платформ'
 
 class Catalogue(models.Model):
     title_id = models.ForeignKey(
@@ -48,5 +66,13 @@ class Catalogue(models.Model):
         related_name='platforms'
     )
     publish_date = models.DateField("Дата выхода", null=True)
+
+    def __str__(self):
+        return f"{self.title_name}"
+    class Meta:
+        verbose_name = 'Каталог'
+        verbose_name_plural = 'Каталоги'
+
+#
 
 
